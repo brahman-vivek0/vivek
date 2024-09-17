@@ -213,16 +213,41 @@
         <div class="social-item">
           <a href="https://www.instagram.com/brahman_vivek0/?hl=en"><img src="https://img.icons8.com/bubbles/100/000000/instagram-new.png" /></a>
         </div>
-      
-        <div class="social-item">
-          <a href="#"><img src="https://img.icons8.com/bubbles/100/000000/behance.png" /></a>
-        </div>
       </div>
       <p>Copyright © 2024 Vivek. All rights reserved</p>
     </div>
   </section>
   <!-- End Footer -->
-  <script src="./app.js"></script>
+  <script>
+      <script>
+    const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+    const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+    const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+    const header = document.querySelector('.header.container');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobile_menu.classList.toggle('active');
+    });
+
+    document.addEventListener('scroll', () => {
+      var scroll_position = window.scrollY;
+      if (scroll_position > 250) {
+        header.style.backgroundColor = '#29323c';
+      } else {
+        header.style.backgroundColor = 'transparent';
+      }
+    });
+
+    menu_item.forEach((item) => {
+      item.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobile_menu.classList.toggle('active');
+      });
+    });
+
+  </script>
+  </script>
 </body>
 
 </html>
